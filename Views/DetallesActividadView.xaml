@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodel="clr-namespace:U4_Topicos_Actividad_1.ViewModels"
+             Shell.NavBarIsVisible="False"
+             x:Class="U4_Topicos_Actividad_1.Views.DetallesActividadView">
+    <Border Stroke="Black" StrokeThickness="2" Margin="25,225,25,250" StrokeShape="RoundRectangle 20,20,0,0">
+        <toolkit:DockLayout  BackgroundColor="FloralWhite">
+            <toolkit:DockLayout HeightRequest="55" Background="#1F1F1F" toolkit:DockLayout.DockPosition="Top">
+                <Label FontSize="30" Margin="15,5,5,5" toolkit:DockLayout.DockPosition="Left" TextColor="Gainsboro" FontAttributes="Bold" FontFamily="Arial">Actividad</Label>
+                <HorizontalStackLayout toolkit:DockLayout.DockPosition="Right" HorizontalOptions="End">
+                    <Button BorderColor="Black" BackgroundColor="Gainsboro" BorderWidth="1" WidthRequest="60" CornerRadius="10" Margin="0,2,10,2" ImageSource="tacha.png" Command="{Binding CancelarCommand}"></Button>
+                </HorizontalStackLayout>
+            </toolkit:DockLayout>
+            <ScrollView>
+                <VerticalStackLayout >
+                    <Label Text="{Binding Actividad.Nombre}" FontAttributes="Bold" FontSize="25" TextColor="Black" Margin="10,20,10,20" HorizontalTextAlignment="Center"></Label>
+                    <Line Stroke="Black" StrokeThickness="2" X1="400"></Line>
+                    <Border StrokeThickness="0" Background="Gainsboro">
+                        <Label FontAttributes="Bold" FontSize="25" TextColor="Black" Margin="10,10,10,10" HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Actividad.HoraInicio}" FontSize="25" FontAttributes="Bold" TextColor="Black"></Span>
+                                    <Span Text=":00" FontSize="25" FontAttributes="Bold" TextColor="Black"></Span>
+                                    <Span Text=" a " FontSize="25" FontAttributes="Bold" TextColor="Black"></Span>
+                                    <Span Text="{Binding Actividad.HoraFinal}" FontSize="25" FontAttributes="Bold" TextColor="Black"></Span>
+                                    <Span Text=":00" FontSize="25" FontAttributes="Bold" TextColor="Black"></Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Border>
+                    <Line Stroke="Black" StrokeThickness="2" X1="400"></Line>
+                    <Label Text="{Binding Actividad.Descripcion}" FontAttributes="Bold" FontSize="20" TextColor="Black" Margin="10,20,10,20" HorizontalTextAlignment="Center"></Label>
+                </VerticalStackLayout>
+            </ScrollView>
+        </toolkit:DockLayout>
+    </Border>
+</ContentView>

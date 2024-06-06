@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="U4_Topicos_Actividad_1.Views.AgregarClaseView"
+             xmlns:viewmodel="clr-namespace:U4_Topicos_Actividad_1.ViewModels"
+             xmlns:models="clr-namespace:U4_Topicos_Actividad_1.Models"
+             Shell.NavBarIsVisible="False"
+             Background="FloralWhite"
+             Title="AgregarClaseView">
+    <toolkit:DockLayout>
+        <VerticalStackLayout toolkit:DockLayout.DockPosition="Top">
+            <toolkit:DockLayout HeightRequest="55" Background="#1F1F1F" toolkit:DockLayout.DockPosition="Top">
+                <Button toolkit:DockLayout.DockPosition="Left" BorderColor="Black" BackgroundColor="Gainsboro" BorderWidth="1" WidthRequest="75" CornerRadius="10" Margin="5,2,0,2" ImageSource="tacha.png" Command="{Binding CancelarCommand}"></Button>
+                <Button toolkit:DockLayout.DockPosition="Right" BorderColor="Black" BackgroundColor="Gainsboro" BorderWidth="1" WidthRequest="75" CornerRadius="10" Margin="0,2,5,2" ImageSource="check.png" Command="{Binding AgregarClaseCommand}"></Button>
+                <Label FontSize="30" Margin="5,5,5,5" toolkit:DockLayout.DockPosition="Left" TextColor="Gainsboro" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center">Agregar Clase</Label>
+            </toolkit:DockLayout>
+        </VerticalStackLayout>
+        <ScrollView>
+        <VerticalStackLayout Margin="5">
+            <Label FontSize="30" Margin="5,5,5,5" TextColor="Black" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center">Nombre de la clase:</Label>
+            <Entry FontSize="25" Background="Gainsboro" TextColor="Black" FontAttributes="Bold" Text="{Binding Clase.Nombre}"></Entry>
+            <Label FontSize="30" Margin="5,10,5,5" TextColor="Black" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center">Hora de inicio:</Label>
+            <Picker Background="Gainsboro" FontAttributes="Bold" FontSize="25" TextColor="Black" HorizontalTextAlignment="Center" SelectedItem="{Binding Clase.HoraInicio}" ItemsSource="{Binding Horas}"></Picker>
+            <Label FontSize="30" Margin="5,10,5,5" TextColor="Black" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center">Hora de término:</Label>
+            <Picker Background="Gainsboro" FontAttributes="Bold" FontSize="25" TextColor="Black" HorizontalTextAlignment="Center" SelectedItem="{Binding Clase.HoraFinal}" ItemsSource="{Binding Horas}"></Picker>
+            <Label FontSize="30" Margin="5,10,5,5" TextColor="Black" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center">Nombre del profesor:</Label>
+            <Entry FontSize="25" Background="Gainsboro" TextColor="Black" FontAttributes="Bold" Text="{Binding Clase.NombreMaestro}"></Entry>
+            <Label FontSize="30" Margin="5,10,5,5" TextColor="Black" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center">Aula de la clase:</Label>
+            <Entry FontSize="25" Background="Gainsboro" TextColor="Black" FontAttributes="Bold" Text="{Binding Clase.Aula}"></Entry>
+                <Label FontSize="25" Margin="5,10,5,5" TextColor="DarkBlue" FontAttributes="Bold" FontFamily="Arial" HorizontalTextAlignment="Center" Text="{Binding Error}"></Label>
+            </VerticalStackLayout>
+        </ScrollView>
+    </toolkit:DockLayout>
+</ContentPage>

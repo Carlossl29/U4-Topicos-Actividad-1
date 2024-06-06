@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:views="clr-namespace:U4_Topicos_Actividad_1.Views"
+             xmlns:viewmodel="clr-namespace:U4_Topicos_Actividad_1.ViewModels"
+             Background="FloralWhite"
+             x:Name="HorarioPage"
+             x:Class="U4_Topicos_Actividad_1.Views.HorarioView">
+    <toolkit:DockLayout>
+        <VerticalStackLayout>
+            <toolkit:DockLayout HeightRequest="55" Background="#1F1F1F" toolkit:DockLayout.DockPosition="Top">
+                <Label FontSize="30" Margin="15,5,5,5" toolkit:DockLayout.DockPosition="Left" TextColor="Gainsboro" FontAttributes="Bold" FontFamily="Arial">Horario</Label>
+                <HorizontalStackLayout toolkit:DockLayout.DockPosition="Right" HorizontalOptions="End">
+                    <Button BorderColor="Black" BackgroundColor="Gainsboro" BorderWidth="1" WidthRequest="75" CornerRadius="10" Margin="0,2,10,2" ImageSource="tarea.png" Command="{Binding VerAgregarClaseCommand}"></Button>
+                    <Button BorderColor="Black" BackgroundColor="Gainsboro" BorderWidth="1" WidthRequest="75" CornerRadius="10" Margin="0,2,10,2" ImageSource="actividades.png" Command="{Binding VerAgregarActCommand}"></Button>
+                </HorizontalStackLayout>
+            </toolkit:DockLayout>
+            <Border Stroke="Black" StrokeThickness="0">
+                <toolkit:DockLayout HeightRequest="55" Background="FloralWhite" toolkit:DockLayout.DockPosition="Top" Margin="0,10,0,5">
+                    <HorizontalStackLayout>
+                        <Button BorderColor="Black" BackgroundColor="FloralWhite" BorderWidth="1.5" WidthRequest="50" CornerRadius="10" Margin="0,2,10,2" Text="L" FontSize="22" FontAttributes="Bold" Command="{Binding MostrarHorarioCommand}" CommandParameter="{x:Static viewmodel:Dias.Lunes}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Dia}" Value="{x:Static viewmodel:Dias.Lunes}">
+                                            <Setter Property="BackgroundColor" Value="Gainsboro"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button BorderColor="Black" BackgroundColor="FloralWhite" BorderWidth="1.5" WidthRequest="50" CornerRadius="10" Margin="0,2,10,2" Text="M" FontSize="22" FontAttributes="Bold" Command="{Binding MostrarHorarioCommand}" CommandParameter="{x:Static viewmodel:Dias.Martes}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Dia}" Value="{x:Static viewmodel:Dias.Martes}">
+                                            <Setter Property="BackgroundColor" Value="Gainsboro"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button BorderColor="Black" BackgroundColor="FloralWhite" BorderWidth="1.5" WidthRequest="50" CornerRadius="10" Margin="0,2,10,2" Text="M" FontSize="22" FontAttributes="Bold" Command="{Binding MostrarHorarioCommand}" CommandParameter="{x:Static viewmodel:Dias.Miercoles}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Dia}" Value="{x:Static viewmodel:Dias.Miercoles}">
+                                            <Setter Property="BackgroundColor" Value="Gainsboro"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button BorderColor="Black" BackgroundColor="FloralWhite" BorderWidth="1.5" WidthRequest="50" CornerRadius="10" Margin="0,2,10,2" Text="J" FontSize="22" FontAttributes="Bold" Command="{Binding MostrarHorarioCommand}" CommandParameter="{x:Static viewmodel:Dias.Jueves}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Dia}" Value="{x:Static viewmodel:Dias.Jueves}">
+                                            <Setter Property="BackgroundColor" Value="Gainsboro"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button BorderColor="Black" BackgroundColor="FloralWhite" BorderWidth="1.5" WidthRequest="50" CornerRadius="10" Margin="0,2,10,2" Text="V" FontSize="22" FontAttributes="Bold" Command="{Binding MostrarHorarioCommand}" CommandParameter="{x:Static viewmodel:Dias.Viernes}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Dia}" Value="{x:Static viewmodel:Dias.Viernes}">
+                                            <Setter Property="BackgroundColor" Value="Gainsboro"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button BorderColor="Black" BackgroundColor="FloralWhite" BorderWidth="1.5" WidthRequest="50" CornerRadius="10" Margin="0,2,10,2" Text="S" FontSize="22" FontAttributes="Bold" Command="{Binding MostrarHorarioCommand}" CommandParameter="{x:Static viewmodel:Dias.Sabado}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Dia}" Value="{x:Static viewmodel:Dias.Sabado}">
+                                            <Setter Property="BackgroundColor" Value="Gainsboro"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button BorderColor="Black" BackgroundColor="FloralWhite" BorderWidth="1.5" WidthRequest="50" CornerRadius="10" Margin="0,2,10,2" Text="D" FontSize="22" FontAttributes="Bold" Command="{Binding MostrarHorarioCommand}" CommandParameter="{x:Static viewmodel:Dias.Domingo}">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding Dia}" Value="{x:Static viewmodel:Dias.Domingo}">
+                                            <Setter Property="BackgroundColor" Value="Gainsboro"></Setter>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </HorizontalStackLayout>
+                </toolkit:DockLayout>
+            </Border>
+        </VerticalStackLayout>
+        <CollectionView ItemsLayout="VerticalList" ItemsSource="{Binding Horario}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItem Text="Eliminar" IconImageSource="borrar.png" BackgroundColor="#1F1F1F" Command="{Binding Source={x:Reference HorarioPage}, Path= BindingContext.VerEliminarCommand}" CommandParameter="{Binding .}"></SwipeItem>
+                            <SwipeItem Text="Editar" IconImageSource="editar.png" BackgroundColor="#1F1F1F" Command="{Binding Source={x:Reference HorarioPage}, Path= BindingContext.VerEditarCommand}" CommandParameter="{Binding .}"></SwipeItem>
+                            <SwipeItem Text="Detalles" IconImageSource="detalles.png" BackgroundColor="#1F1F1F" Command="{Binding Source={x:Reference HorarioPage}, Path= BindingContext.VerDetallesCommand}" CommandParameter="{Binding .}"></SwipeItem>
+                        </SwipeView.RightItems>
+                        <views:ActividadView>
+                        </views:ActividadView>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </toolkit:DockLayout>
+</ContentView>

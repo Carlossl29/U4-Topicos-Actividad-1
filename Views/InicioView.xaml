@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="U4_Topicos_Actividad_1.Views.InicioView"
+             xmlns:views="clr-namespace:U4_Topicos_Actividad_1.Views"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodel="clr-namespace:U4_Topicos_Actividad_1.ViewModels"
+             Shell.NavBarIsVisible="False"
+             Background="FloralWhite"
+             Title="InicioView">
+    <Grid>
+        <views:HorarioView></views:HorarioView>
+        <views:DetallesClaseView>
+            <views:DetallesClaseView.Style>
+                <Style TargetType="views:DetallesClaseView">
+                    <Setter Property="IsVisible" Value="Collapse"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger TargetType="views:DetallesClaseView" Binding="{Binding Vista}" Value="{x:Static viewmodel:Vistas.DetallesClase}">
+                            <Setter Property="IsVisible" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:DetallesClaseView.Style>
+        </views:DetallesClaseView>
+        <views:DetallesActividadView>
+            <views:DetallesActividadView.Style>
+                <Style TargetType="views:DetallesActividadView">
+                    <Setter Property="IsVisible" Value="Collapse"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger TargetType="views:DetallesActividadView" Binding="{Binding Vista}" Value="{x:Static viewmodel:Vistas.DetallesActividad}">
+                            <Setter Property="IsVisible" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:DetallesActividadView.Style>
+        </views:DetallesActividadView>
+        <views:EliminarView>
+            <views:EliminarView.Style>
+                <Style TargetType="views:EliminarView">
+                    <Setter Property="IsVisible" Value="Collapse"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger TargetType="views:EliminarView" Binding="{Binding Vista}" Value="{x:Static viewmodel:Vistas.EliminarActividad}">
+                            <Setter Property="IsVisible" Value="Visible"></Setter>
+                        </DataTrigger>
+                        <DataTrigger TargetType="views:EliminarView" Binding="{Binding Vista}" Value="{x:Static viewmodel:Vistas.EliminarClase}">
+                            <Setter Property="IsVisible" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </views:EliminarView.Style>
+        </views:EliminarView>
+    </Grid>
+</ContentPage>

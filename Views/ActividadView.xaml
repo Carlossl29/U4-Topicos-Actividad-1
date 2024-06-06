@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="U4_Topicos_Actividad_1.Views.ActividadView">
+    <Border Margin="5,10,5,0" Stroke="Black" StrokeThickness="1.5" HeightRequest="150" WidthRequest="400">
+        <toolkit:DockLayout>
+            <Border toolkit:DockLayout.DockPosition="Left" StrokeThickness=".5" WidthRequest="60">
+                <VerticalStackLayout BackgroundColor="Gainsboro">
+                    <Label FontSize="35" TextColor="Black" Text="{Binding HoraInicio}" HorizontalTextAlignment="Center" FontAttributes="Bold"></Label>
+                    <Image Source="flecha.png" Margin="5,2.5,5,0" WidthRequest="40"></Image>
+                    <Label FontSize="35" TextColor="Black" Text="{Binding HoraFinal}" HorizontalTextAlignment="Center" FontAttributes="Bold"></Label>
+                </VerticalStackLayout>
+            </Border>
+            <ScrollView WidthRequest="325">
+                <Label FontSize="30" TextColor="Black" FontAttributes="Bold" Margin="10,0,10,0"  Text="{Binding Nombre}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            </ScrollView>
+            </toolkit:DockLayout>
+    </Border>
+</ContentView>
